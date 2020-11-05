@@ -15,11 +15,11 @@ diseases stage.
 ## Installation
 
 And the development version from [Bin-Chen-lab
-repository](https://github.com/Bin-Chen-Lab/livercells) with:
+repository](https://github.com/Bin-Chen-Lab/sigatlas) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("Bin-Chen-Lab/livercells")
+devtools::install_github("Bin-Chen-Lab/sigatlas")
 ```
 
 ## Usage
