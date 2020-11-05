@@ -30,7 +30,6 @@ This is a basic example which shows you how to solve a common problem:
 library(sigatlas)
 exp.matrix=read.csv("exp_data.csv", header = T, row.names = 1)
 liver.enriched.cell=sigatlas(exp.matrix, tissue = "liver")
-## basic example code
 ```
 
 This function performed the cell enrichemnt for the different tissues.
