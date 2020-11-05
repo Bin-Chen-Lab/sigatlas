@@ -28,8 +28,8 @@ This is a basic example which shows you how to use this package:
 
 ``` r
 library(sigatlas)
-exp.matrix=read.csv("exp_data.csv", header = T, row.names = 1)
-liver.enriched.cell=sigatlas(exp.matrix, tissue = "liver")
+exp_data=read.csv("exp_data.csv", header = T, row.names = 1)
+liver.enriched.cell=sigatlas(exp_data, tissue = "liver")
 ```
 
 This function performed the cell enrichemnt of any specified tissue and provide the its cell composition.
