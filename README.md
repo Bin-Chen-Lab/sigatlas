@@ -32,7 +32,7 @@ exp.matrix=read.csv("exp_data.csv", header = T, row.names = 1)
 liver.enriched.cell=sigatlas(exp.matrix, tissue = "liver")
 ```
 
-This function performed the cell enrichemnt of any specified tissues.
+This function performed the cell enrichemnt of any specified tissue.
 
 ## Data input
 
