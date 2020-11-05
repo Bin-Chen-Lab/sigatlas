@@ -24,7 +24,7 @@ devtools::install_github("Bin-Chen-Lab/sigatlas")
 
 ## Usage
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to use this package:
 
 ``` r
 library(sigatlas)
