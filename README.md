@@ -28,7 +28,7 @@ This is a basic example which shows you how to use this package:
 
 ``` r
 library(sigatlas)
-exp_data=read.csv("exp_data.csv", header = T, row.names = 1)
+#exp_data=read.csv("exp_data.csv", header = T, row.names = 1)
 liver.enriched.cell=sigatlas(exp_data, tissue = "liver")
 ```
 
