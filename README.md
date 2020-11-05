@@ -10,7 +10,7 @@
 sigatlas package can be used to deconvolute the cell composition from
 any specified tissue using its RNA-seq data. It can be helpful to
 analyse the cell composition of samples related to healthy or any
-diseases stage. Currently, analysis can be done for seven human organ tissues namesly, liver, kidney, Bone.marrow, breast, bladder, Retina, and Thymus.
+diseases stage. Currently, analysis can be done for seven human organ tissues namely, liver, kidney, Bone.marrow, breast, bladder, Retina, and Thymus.
 
 ## Installation
 
@@ -40,7 +40,7 @@ The expression data should contains the normalized expression values
 with gene in rows and samples in columns. The rowname should be gene
 Symbols. sigatlas package uses the normalized expression value (TPM
 or FPKM value). The gene signatures are provided in the package, but if anyone
-wants to use their own gene signature for the cells, they can use their own signature. The signatures should be a list of genes. Currently, gene signature of seven healthy human organ tissues namesly, liver, kidney, Bone.marrow, breast, bladder, Retina, and Thymus are available. So, useres can perform the analysis for these seven tissues. If anyone have
+wants to use their own gene signature for the cells, they can use their own signature. The signatures should be a list of genes. Currently, gene signature of seven healthy human organ tissues namely, liver, kidney, Bone.marrow, breast, bladder, Retina, and Thymus are available. So, useres can perform the analysis for these seven tissues. If anyone have
 control and disease dataset, they can combined all the samples in one
 matrix and use it.
 
