@@ -10,7 +10,7 @@
 sigatlas package can be used to deconvolute the cell composition from
 any specified tissue using its RNA-seq data. It can be helpful to
 analyse the cell composition of samples related to healthy or any
-diseases stage.
+diseases stage. Currently, analysis can be done for seven human organ tissues namesly, liver, kidney, Bone.marrow, breast, bladder, Retina, and Thymus.
 
 ## Installation
 
