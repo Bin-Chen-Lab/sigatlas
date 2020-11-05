@@ -9,7 +9,7 @@
 
 sigatlas package can be used to deconvolute the cell composition from
 any specified tissue using its RNA-seq data. It can be helpful to
-analyse the cell composition of samples related to healthy and any
+analyse the cell composition of samples related to healthy or any
 diseases stage.
 
 ## Installation
