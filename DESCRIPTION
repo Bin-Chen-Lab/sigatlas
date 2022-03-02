@@ -1,5 +1,5 @@
 Package: sigatlas
-Title: Provide the cells composition as cell enrichment score for any specified tissue based on RNA-seq data 
+Title: Provide the cells composition as cell enrichment score for any specified tissue based on RNA-seq data. 
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Rama",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "ramashan@msu.edu")
 Description: This is package can be used to deconvolute the cell composition of any specified tissue using its bulk RNA-seq data. The cell markers identified in different healthy tissues by the single RNA-Seq analysis are used for deconvolution. User need to provide a expression matrix having rownames as gene symbol and colnames as samples. The expression file should be normalized count value (TPM or FPKM).
-License: AGPL-3
+License: AGPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

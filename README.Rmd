@@ -44,16 +44,14 @@ This function performed the cell enrichemnt for the different tissues.
 
 ## Data input
 
-The expression data should contains the normalized expression values
-with gene in rows and samples in columns. The rownames should be gene
-Symbols. livercells package uses the normalized expression value (TPM
-value). The gene signatures are provided in the package, but if anyone
-wants to use their own signature they can do that. if anyone have
-control and disease dataset, they can combined all the samples in one
-matrix and use it.
+The expression data should contains the normalized expression values with gene in rows and samples in columns. The rownames should be gene Symbols. sigatlas package uses the normalized expression value (TPM or FPKM value). The gene signatures are provided in the package, but if anyone wants to use their own gene signature for the cells, they can use their own signature. The signatures should be a list of genes. Currently, gene signature of seven healthy human organ tissues namely, liver, kidney, Bone.marrow, breast, bladder, Retina, and Thymus are available. So, users can perform the analysis for these seven tissues. if anyone
+wants to use their own signature they can do that. They will have to 
+create a list with cell names with their markers. Additionally, 
+they will have to provide "other" in the tissue name.If anyone have control and disease dataset, they can combined all the samples in one matrix and use it.
+
 
 ## Contributors
 
 sigatlas is developed by BinChen lab. Any questions or feedback can be
 addressed to Rama Shankar, PhD, <ramashan@msu.edu> or Bin Chen, PhD, PI,
-<bin.chen@hc.msu.edu>
+<Chenbi12@msu.edu>

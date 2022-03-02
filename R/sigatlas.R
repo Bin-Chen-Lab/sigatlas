@@ -2,12 +2,13 @@
 #'
 #'This function  provide the cell composition in any liver tissue
 #'@param expr is the gene expression data set. A matrix with rownames as gene symbol and colmanes as samples
-#'@param signatures a GMT object of signatures.
+#'@param cellmarker Gene sets provided either as a list marker genes for each cells or as a GeneSetCollection object.
 #'@param genes list of genes to use in the analysis.
 #'@param parallel.sz integer for the number of threads to use. Default is 4.
 #'@param parallel.type Type of cluster architecture when using snow. 'SOCK' or 'FORK'. Fork is faster, but is not supported in windows.
+#'@param tissue Name of tissue should be 'liver', 'kidney', 'Bone.marrow', 'breast', 'bladder', 'Ratina', and 'Thymus'
 #'@exampls:
-#'liver_cells(expr)
+#'liver_cells(expr, tissue="liver")
 #'```
 #'@author Rama Shankar
 #'@return dataframe with enrichmnet score for each cells in every samples
@@ -28,7 +29,7 @@
 #'@export
 # ##Function to perform the liver deconvulation
 
-sigatlas <- function(expr, signatures=NULL, tissue, parallel.sz = 4, parallel.type = 'SOCK') {
+sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, parallel.sz = 4, parallel.type = 'SOCK') {
   tissues= names(signature)
   if (tissue %in% tissues){
   ## install the package if not available
@@ -46,7 +47,7 @@ sigatlas <- function(expr, signatures=NULL, tissue, parallel.sz = 4, parallel.ty
   }
   ### If signature is not provided then signature along with this function will be used
 
-    if (is.null(signatures)){
+    if (is.null(cellmarker)){
       signatures = signature[[tissue]]
     }
 
@@ -60,9 +61,33 @@ sigatlas <- function(expr, signatures=NULL, tissue, parallel.sz = 4, parallel.ty
       scores <- GSVA::gsva(expr, signatures, method = "ssgsea",
                            ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type)
     }
-    } else {
-      print("tissue is not present in the list or wrong tissue name")
+    }else if (tissue=="other"){
+      signatures=cellmarker
+      if ("GSVA" %in% rownames(installed.packages())== FALSE){
+        BiocManager::install("GSVA")
+      }else{
+        require("GSVA")
+      }
+      # If the expression file is provided as the dataframe changed it to the matrix
+      # as GSVA work with only matrix
+      if(class(expr)=="data.frame"){
+        expr=as.matrix(expr)
+      }else{
+        print("No need to convert the matrix file")
+      }
+      if(packageVersion("GSVA") >= "1.36.0") {
+        # GSVA >= 1.36.0 does not support `parallel.type` any more.
+        # Instead it automatically uses the backend registered by BiocParallel.
+        scores <- GSVA::gsva(expr, signatures, method = "ssgsea",
+                             ssgsea.norm = T,parallel.sz = parallel.sz)
+      } else {
+        scores <- GSVA::gsva(expr, signatures, method = "ssgsea",
+                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type)
     }
-  }
+    }else{
+    print("tissue name is not correct")
+    }
+}
+
 
 
