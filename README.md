@@ -26,13 +26,11 @@ devtools::install_github("Bin-Chen-Lab/sigatlas")
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
+## basic example code
 library(sigatlas)
 exp.matrix=read.csv("exp_data.csv", header = T, row.names = 1)
 liver.enriched.cell=sigatlas(exp.matrix, tissue = "liver")
 other.tissue.cell=sigatlas(exp.matrix, cellmarker=cell.marker.gene.list, tissue="other")
-
-
-## basic example code
 ```
 
 This function performed the cell enrichemnt for the different tissues.
