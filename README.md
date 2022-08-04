@@ -35,7 +35,7 @@ For Mouse samples
 sigatlas(expr=Mouse_expdata, tissue="Liver", organism="Mouse")
 
 For Other samples
-sigatlas(expr=other_expdata, cellmarker=geneSet organism="Other")
+sigatlas(expr=other_expdata, cellmarker=geneSet, organism="Other")
 ```
 
 This function performed the cell enrichemnt for the different tissues.
