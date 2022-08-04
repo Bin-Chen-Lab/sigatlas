@@ -29,10 +29,10 @@ This is a basic example which shows you how to solve a common problem:
 ## basic example code
 library(sigatlas)
 For Human samples
-sigatlas(expr=Human_expdata, tissue="liver", organism="Human")
+sigatlas(expr=Human_expdata, tissue="Liver", organism="Human")
 
 For Mouse samples
-sigatlas(expr=Mouse_expdata, tissue="liver", organism="Mouse")
+sigatlas(expr=Mouse_expdata, tissue="Liver", organism="Mouse")
 
 For Other samples
 sigatlas(expr=other_expdata, cellmarker=geneSet organism="Other")
