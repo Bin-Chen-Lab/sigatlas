@@ -126,7 +126,7 @@ sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, organism=NULL, parallel
       }
       # If the expression file is provided as the dataframe changed it to the matrix
       # as GSVA work with only matrix
-      if(class(expr)=="data.frame"){
+      if(class(expr)[1]=="data.frame"){
         expr=as.matrix(expr)
       }else{
         print("No need to convert the matrix file")
