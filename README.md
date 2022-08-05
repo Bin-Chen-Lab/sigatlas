@@ -28,13 +28,13 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 ## basic example code
 library(sigatlas)
-For Human samples
+#For Human samples
 sigatlas(expr=Human_expdata, tissue="Liver", organism="Human")
 
-For Mouse samples
+#For Mouse samples
 sigatlas(expr=Mouse_expdata, tissue="Liver", organism="Mouse")
 
-For Other samples
+#For Other samples
 sigatlas(expr=other_expdata, cellmarker=geneSet, organism="Other")
 ```
 
