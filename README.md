@@ -6,10 +6,10 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-sigatlas package can be used to deconvolute the cell composition from
-any specified tissue using its RNA-seq data. It can be helpful to
-analyse the cell composition of samples related to healthy and any
-diseases stage.
+The sigatlas package was developed to deconvolute cell composition of bulk RNA-seq samples 
+based on reference normal cell types, which were derived from tissue specific single cell RNA-seq. It can be applied to
+analyze cell composition of samples related to healthy and any
+diseased tissues. The method is essentially based on the single sample gene set enrichment analysis (ssGSEA). Because ssGSEA scores are based on a non-parametric test and normalized across samples, they do not have a specific meaning; however, our simulation study confirmed its ability to differentiate cell type abundance across samples. Users need to provide the expression matrix and the tissue type and can optionally provide their customized gene markers of cells to deconvolute bulk expression profiles. While several deconvolution tools could be used, the package sigatlas leverages the emerging reference cell types resulted from cell atlas initiatives and companion efforts and will continue to add more manually curated tissue-specific markers. It is suitable to compare cell type enrichment across samples, yet it does not intend to estimate the absolute abundance of cell types when input samples are mixed with uncharacterized cell types.
 
 ## Installation
 
@@ -23,7 +23,7 @@ devtools::install_github("Bin-Chen-Lab/sigatlas")
 
 ## Usage
 
-This is a basic example which shows you how to solve a common problem:
+This is a basic example which shows you how to perform deconvolution for the tissues taken from liver:
 
 ``` r
 ## basic example code
@@ -38,14 +38,14 @@ sigatlas(expr=Mouse_expdata, tissue="Liver", organism="Mouse")
 sigatlas(expr=other_expdata, cellmarker=geneSet, organism="Other")
 ```
 
-This function performed the cell enrichemnt for the different tissues.
+This function performs cell enrichemnt based on a user-defined cell marker genes.
 
 ## Data input
 
-The expression data should contains the normalized expression values with gene symbols in rows and samples in columns. sigatlas package uses the normalized expression value (TPM or FPKM value). The gene signatures for Human and mouse tissues are provided in the package, but if anyone wants to use their own gene signature for the cells, they can use their own signature. The signatures should be a list of genes. Currently, gene signature of 16 healthy human organ tissues and 23 mouse tissues namely, "Adipose", "Adrenal_gland", "Bladder", "Blood", "Bone_marrow", "Brain", "Breast", "Eye", "Gut", "Heart", "Intestine", "Kidney", "Liver", "Lung", "Muscle", "Omentum", "Ovary", "Pancreas", "Placenta", "Pleura", "Prostate", "Retina", "Skin", "Spleen", "Stomach", "Testis", "Thymus", and "Uterus" are available. So, users can perform the analysis for these tissues. if anyone wants to use their own signature they can also use this package. They will have to create a list with cell names with their markers. Additionally, they will have to provide “Other” in the 'organism' name. If anyone have control and disease dataset, they can combined all the samples in one matrix and use it.
+The expression data should contain the normalized expression values with gene symbols in rows and samples in columns. sigatlas package uses the normalized expression value (TPM or FPKM value). The gene signatures for human and mouse tissues are provided in the package, but if users can input gene signatures of the cells of their interest. The signatures comprise a list of genes. Currently, gene signatures of 16 healthy human organ tissues and 23 mouse tissues namely, "Adipose", "Adrenal_gland", "Bladder", "Blood", "Bone_marrow", "Brain", "Breast", "Eye", "Gut", "Heart", "Intestine", "Kidney", "Liver", "Lung", "Muscle", "Omentum", "Ovary", "Pancreas", "Placenta", "Pleura", "Prostate", "Retina", "Skin", "Spleen", "Stomach", "Testis", "Thymus", and "Uterus" are available. If users want to use their own signatures, they will need to create a list with cell names along with their markers and specify "Other" in the "organism". If user plan to compare the enrichment between two groups, it is recommended to combine samples into a single matrix.
 
 ## Contributors
 
-sigatlas is developed by BinChen lab. Any questions or feedback can be
+sigatlas is developed and maintained by BinChen lab (http://binchenlab.org/). Any questions or feedback should be
 addressed to Rama Shankar, PhD, <ramashan@msu.edu> or Bin Chen, PhD, PI,
 <Chenbi12@msu.edu>
