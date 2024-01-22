@@ -19,6 +19,7 @@ repository](https://github.com/Bin-Chen-Lab/sigatlas) with:
 # install.packages("devtools")
 devtools::install_github("Bin-Chen-Lab/sigatlas")
 ```
+The installation time as well as example run time is less than five minutes
 
 ## Usage
 
