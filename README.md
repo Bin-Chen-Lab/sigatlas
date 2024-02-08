@@ -47,4 +47,4 @@ The expression data should contain the normalized expression values with gene sy
 
 sigatlas is developed and maintained by the Chen lab (http://binchenlab.org/). Any questions or feedback should be
 addressed to Rama Shankar, PhD, <ramashan@msu.edu> or Bin Chen, PhD, PI,
-<Chenbi12@msu.edu>
+<Chenbi12@msu.edu>.
