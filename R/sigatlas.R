@@ -67,8 +67,8 @@ sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, organism=NULL, parallel
         scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
                              ssgsea.norm = T,parallel.sz = parallel.sz, min.sz >1))
       } else {
-        scores <- GSVA::gsva(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1)
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
+                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1))
       }
     }else{
       print("tissue name is not correct or present")
@@ -107,8 +107,8 @@ sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, organism=NULL, parallel
         scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
                              ssgsea.norm = T,parallel.sz = parallel.sz, min.sz >1))
       } else {
-        scores <- GSVA::gsva(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1)
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
+                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1))
       }
     }else{
       print("tissue name is not correct or present")
@@ -137,8 +137,8 @@ sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, organism=NULL, parallel
         scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
                              ssgsea.norm = T,parallel.sz = parallel.sz, min.sz >1))
       } else {
-        scores <- GSVA::gsva(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1)
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
+                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1))
       }
     }
   }
