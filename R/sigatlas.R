@@ -64,11 +64,9 @@ sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, organism=NULL, parallel
       if(packageVersion("GSVA") >= "1.36.0") {
         # GSVA >= 1.36.0 does not support `parallel.type` any more.
         # Instead it automatically uses the backend registered by BiocParallel.
-        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz, min.sz >1))
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, normalize = T))
       } else {
-        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1))
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, normalize = T))
       }
     }else{
       print("tissue name is not correct or present")
@@ -104,11 +102,9 @@ sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, organism=NULL, parallel
       if(packageVersion("GSVA") >= "1.36.0") {
         # GSVA >= 1.36.0 does not support `parallel.type` any more.
         # Instead it automatically uses the backend registered by BiocParallel.
-        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz, min.sz >1))
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, normalize = T))
       } else {
-        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1))
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, normalize = T))
       }
     }else{
       print("tissue name is not correct or present")
@@ -134,11 +130,9 @@ sigatlas <- function(expr, cellmarker=NULL, tissue=NULL, organism=NULL, parallel
       if(packageVersion("GSVA") >= "1.36.0") {
         # GSVA >= 1.36.0 does not support `parallel.type` any more.
         # Instead it automatically uses the backend registered by BiocParallel.
-        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz, min.sz >1))
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, normalize = T))
       } else {
-        scores <- GSVA::gsva(ssgseaParam(expr, signatures, method = "ssgsea",
-                             ssgsea.norm = T,parallel.sz = parallel.sz,parallel.type = parallel.type, min.sz >1))
+        scores <- GSVA::gsva(ssgseaParam(expr, signatures, normalize = T))
       }
     }
   }
